@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.login-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e2f;
+  font-family: "Poppins", sans-serif;
+}
+.login-container {
+  background-color: #2e2e42;
+  padding: 3rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 700px;
+  min-height: 550px; 
+  max-width: 400px;
+  text-align: left;
+}
+.login-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #cccccc;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.login-meta .date {
+  opacity: 0.9;
+}
+
+.login-meta .time {
+  letter-spacing: 0.5px;
+}
+.login-button {
+  background-color: #ffc857;
+  color: #1e1e2f;
+  font-weight: 600;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.login-title {
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin-bottom: 0.8rem;
+  font-family: "Poppins", sans-serif;
+}
+.today-task {
+  background-color: #2b2b2b;
+  width: 100%;
+  height: 70px;
+  margin-top: 2rem;
+  border-radius: 0.8rem;
+  display: flex;            
+  align-items: center;       
+  justify-content: space-between;
+  padding-right: 0.75rem;
+}
+.today-tasktitle {
+  color: #cccccc;
+  margin: 0;                
+  margin-left: 1rem;      
+  text-align: left;        
+}
+.today-right {
+  display: flex;
+  align-items: flex-start;  /* align to top, matching progress circle top */
+  gap: 0.6rem;
+}
+.logout-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #E04A27; /* requested color */
+  color: #ffffff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.logout-circle:hover {
+  filter: brightness(0.95);
+}
+.today-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-circle {
+  --size: 44px;
+  --track: #3a3a3a;
+  --fill: #ffc857;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    conic-gradient(var(--fill) var(--progress), var(--track) 0);
+}
+.progress-text {
+  color: #1e1e2f;
+  background: #fff6d6;
+  border-radius: 50%;
+  width: calc(var(--size) - 18px);
+  height: calc(var(--size) - 18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.tasks-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; 
+  max-height: 260px;     
+  overflow-y: auto;       
+ 
+}
+
+
+.task-time-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+.task-time-icon {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+.task-time-input {
+  background: transparent;
+  border: 1px solid #3a3a3a;
+  color: #e8e8e8;
+  border-radius: 6px;
+  padding: 0.15rem 0.45rem;
+  height: 24px;
+  font-size: 0.85rem;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.task-time-input::-webkit-calendar-picker-indicator {
+  opacity: 0;            
+  pointer-events: none;   
+}
+.task-time-input::-webkit-clear-button,
+.task-time-input::-webkit-inner-spin-button {
+  display: none;
+}
+.task-time-input::-ms-clear { 
+  display: none;
+}
+.tasks-list {
+  scrollbar-width: none;    
+  -ms-overflow-style: none;  
+}
+.tasks-list::-webkit-scrollbar { 
+  width: 0;
+  height: 0;
+}
+.New-task {
+  background-color: #2b2b2b;
+  width: 100%;
+  box-sizing: border-box;    
+  flex: 0 0 90px; /* flex-grow:0; flex-shrink:0; flex-basis:90px */
+  height: 90px;
+  border-radius: 0.8rem;
+  overflow: hidden;         
+  display: flex;            
+  align-items: center;       
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  position: relative;        
+}
+.task-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+.task-label {
+  background-color: #FB542B;
+  height: 5px;
+  width: 35px;
+  border-radius: 12%;
+  font-size: 0.85rem;
+  margin-left: 2px;
+}
+
+.task-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e8e8e8;
+  font-size: 12px;
+  
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #ffc857;
+   /* modern browsers */
+}
+
+.task-remove {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  color: #bdbdbd;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+.task-remove:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.new-task-button {
+  margin-top: 1rem; /* keep some space before the button, no bottom margin needed */
+}
+.add-button {
+  background-color:  #2b2b2b;
+  position: static;
+  width: 100%;
+  height: 45px;             /* height to contain the circle nicely */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+   border-radius: 0.8rem;
+}
+
+.add-button-font {
+  width: 20px;              /* equal width/height for a perfect circle */
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FB542B;
+  color: #1e1e2f;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;        /* size of the plus icon */
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  outline: 2px solid #FB542B;
+  outline-offset: 2px;
+  margin-bottom: 13px;
+}
+
+.add-button-font:hover {
+  background-color: #E04A27;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.add-button-font:active {
+  transform: scale(0.97);
+}
+.heading-styles{
+   display: flex;               
+  justify-content: space-between;
+}
+
+
