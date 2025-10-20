@@ -69,10 +69,18 @@ export default function Navbar({ isSidebarOpen, setIsSidebarOpen }) {
         {/* Middle section - Navigation Links (Desktop) */}
         <div className="navbar-center hidden lg:flex"></div>
 
-        {/* Right side - Action button */}
+        {/* Right side - Profile Button */}
+        <div className="navbar-end flex items-center gap-2 sm:gap-3 mr-2 sm:mr-3 lg:mr-4">
+          <button 
+            className="flex items-center justify-center rounded-full bg-[#FFB74D] text-[#750014] font-semibold hover:ring-2 hover:opacity-88 focus:outline-none focus:ring-0 transition-all w-8 h-8 sm:w-8.5 sm:h-8.5 lg:w-8.5 lg:h-8.5 text-xs sm:text-sm lg:text-base cursor-pointer"
+            aria-label="Profile"
+          >
+            N
+          </button>
+        </div>
       </div>
 
-      {/* Sidebar Component */}
+      {/* Sidebar Component */}      {/* Sidebar Component */}
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </>
   );

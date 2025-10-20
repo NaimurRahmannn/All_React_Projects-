@@ -1,8 +1,10 @@
-import Footer from "../Components/Footer";
+//import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Token from "../pages/Token";
+import Allnotice from "../pages/Postdeatails";
 import { useState, useEffect } from "react";
 
 export default function Mainlayout() {
@@ -28,7 +30,8 @@ export default function Mainlayout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/post-details" element={<div className="p-8"></div>} />
+          <Route path="/Allnotice" element={<Allnotice/>}/>
+          <Route path="/Token" element={<Token/>}/>
         </Routes>
       </div>
 

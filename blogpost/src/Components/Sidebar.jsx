@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Sidebar({ isOpen, onClose }) {
   return (
-    <>
+    <div>
       {/* Mobile Overlay - Click anywhere to close */}
       {isOpen && (
         <div
@@ -16,7 +16,7 @@ export default function Sidebar({ isOpen, onClose }) {
         className={`
           fixed top-[80px] left-0 h-[calc(100vh-80px)] bg-[#F7F7F8] shadow-xl transition-transform duration-300 ease-in-out z-40
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
-          w-64 lg:w-82  border-r-0.5 border-r-gray-200
+          w-64 lg:w-76  border-r-[1px] border-gray-200
         `}
       >
         {/* Sidebar Content */}
@@ -52,7 +52,7 @@ export default function Sidebar({ isOpen, onClose }) {
               <span className="font-normal">Home</span>
             </NavLink>
             <NavLink
-              to="/post-details"
+              to="/Allnotice"
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-3 transition-all hover:bg-gray-200 hover:translate-x-1 ${
                   isActive
@@ -79,6 +79,22 @@ export default function Sidebar({ isOpen, onClose }) {
                 />
               </svg>
               <span className="font-normal">All notice</span>
+            </NavLink>
+             <NavLink
+              to="/Token"
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 transition-all hover:bg-gray-200 hover:translate-x-1 ${
+                  isActive
+                    ? "text-[#750014]"
+                    : "text-gray-700"
+                }`
+              }
+              onClick={() => {
+                if (window.innerWidth < 1024) onClose();
+              }}
+            >
+              <span className="inline-block w-5 text-[18px] leading-none text-center">$</span>
+              <span className="font-normal">Token</span>
             </NavLink>
             <NavLink
               to="/about"
@@ -109,15 +125,15 @@ export default function Sidebar({ isOpen, onClose }) {
               </svg>
               <span className="font-normal">About</span>
             </NavLink>
+            
           </nav>
-
+         
           {/* Additional Links Section */}
-          <div className="mt-8 pt-8 border-t border-gray-200">
-          
-           
+         <div className="mt-8 pt-8 border-t border-gray-200">
+                     
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
