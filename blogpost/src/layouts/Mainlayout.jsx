@@ -29,9 +29,9 @@ export default function Mainlayout() {
       <div className={`bg-white shadow-[0_0_10px_#ffffff] min-h-screen transition-all duration-300 pt-20 ${isDesktop && isSidebarOpen ? 'lg:ml-96' : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/Allnotice" element={<Allnotice/>}/>
           <Route path="/Token" element={<Token/>}/>
+           <Route path="/about" element={<About />} />
         </Routes>
       </div>
 
